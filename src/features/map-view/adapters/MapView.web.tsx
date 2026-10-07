@@ -3,8 +3,10 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import type { ReactElement } from 'react';
 import Map, { Marker } from 'react-map-gl/maplibre';
 
-import type { MapCamera, MapViewProps } from '../../../types/maps.js';
+import type { MapCamera, MapViewProps, MapViewStyle } from '../../../types/maps.js';
 import { toMapLibreViewState } from './toMapLibreViewState.js';
+
+const DEFAULT_WEB_STYLE: MapViewStyle = { width: '100%', height: '100%' };
 
 /*** Render the portable map contract through MapLibre on the web. */
 export function MapView({
@@ -27,7 +29,7 @@ export function MapView({
       {...initialViewProps}
       mapStyle={web.styleUrl}
       workerUrl={web.workerUrl}
-      style={style ?? { width: '100%', height: '100%' }}
+      style={style ?? DEFAULT_WEB_STYLE}
       onMove={(event) => {
         onCameraChange?.({ camera: fromMapLibreCamera(event.viewState) });
       }}
