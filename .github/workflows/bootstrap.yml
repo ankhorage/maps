@@ -76,8 +76,31 @@ jobs:
       - name: Install Devtools
         run: bun add -D @ankhorage/devtools
 
-      - name: Synchronize repository
-        run: bunx @ankhorage/ankh devtools sync .
+      - name: Synchronize repository with Devtools provider
+        run: |
+          bun - <<'TS'
+          import provider from '@ankhorage/devtools/cli';
+
+          const handler = provider.handlers.find(
+            ({ path }) => path.length === 1 && path[0] === 'sync',
+          );
+
+          if (!handler) {
+            throw new Error('Devtools sync handler not found.');
+          }
+
+          const result = await handler.handler({
+            argv: ['.'],
+            context: {
+              cwd: process.cwd(),
+              env: process.env,
+              writeStdout: (value) => process.stdout.write(value),
+              writeStderr: (value) => process.stderr.write(value),
+            },
+          });
+
+          process.exitCode = result.exitCode;
+          TS
 
       - name: Remove bootstrap workflow
         run: rm .github/workflows/bootstrap.yml
