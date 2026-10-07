@@ -16,12 +16,13 @@ export function MapView({
 }: MapViewProps): ReactElement {
   const cameraPosition = toExpoCameraPosition(initialCamera);
   const nativeStyle = style ?? { flex: 1 };
+  const cameraProps = cameraPosition === undefined ? {} : { cameraPosition };
 
   if (Platform.OS === 'ios') {
     return (
       <AppleMaps.View
+        {...cameraProps}
         style={nativeStyle}
-        cameraPosition={cameraPosition}
         markers={markers.map(({ id, coordinate, title }) => ({
           id,
           coordinates: coordinate,
@@ -41,8 +42,8 @@ export function MapView({
   if (Platform.OS === 'android') {
     return (
       <GoogleMaps.View
+        {...cameraProps}
         style={nativeStyle}
-        cameraPosition={cameraPosition}
         markers={markers.map(({ id, coordinate, title, description }) => ({
           id,
           coordinates: coordinate,
