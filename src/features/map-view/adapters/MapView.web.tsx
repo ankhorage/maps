@@ -19,9 +19,12 @@ export function MapView({
     throw new Error('@ankhorage/maps web MapView requires web.styleUrl and web.workerUrl.');
   }
 
+  const initialViewState = toMapLibreViewState(initialCamera);
+  const initialViewProps = initialViewState === undefined ? {} : { initialViewState };
+
   return (
     <Map
-      initialViewState={toMapLibreViewState(initialCamera)}
+      {...initialViewProps}
       mapStyle={web.styleUrl}
       workerUrl={web.workerUrl}
       style={style ?? { width: '100%', height: '100%' }}
