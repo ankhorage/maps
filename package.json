@@ -1,0 +1,41 @@
+{
+  "name": "@ankhorage/maps",
+  "version": "0.0.0",
+  "description": "Cross-platform map primitives and adapters for Ankhorage.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankhorage/maps.git"
+  },
+  "homepage": "https://github.com/ankhorage/maps#readme",
+  "bugs": {
+    "url": "https://github.com/ankhorage/maps/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "rm -rf dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo && bun x tsc -p tsconfig.build.json",
+    "check-types": "bun x tsc --noEmit -p tsconfig.json",
+    "typecheck": "bun run check-types",
+    "test": "bun test",
+    "lint": "ankhorage-eslint . --max-warnings=0",
+    "lint:fix": "ankhorage-eslint . --fix --max-warnings=0",
+    "format": "ankhorage-prettier --write .",
+    "format:check": "ankhorage-prettier --check .",
+    "knip:check": "ankhorage-knip",
+    "changeset": "ankhorage-changeset",
+    "changeset:status": "ankhorage-changeset status --since=origin/main",
+    "version-packages": "ankhorage-changeset version"
+  },
+  "packageManager": "bun@1.4.2",
+  "devDependencies": {
+    "@ankhorage/devtools": "^2.1.19",
+    "@types/bun": "^1.4.2"
+  }
+}
