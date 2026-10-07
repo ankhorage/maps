@@ -2,9 +2,11 @@ import { AppleMaps, GoogleMaps } from 'expo-maps';
 import type { ReactElement } from 'react';
 import { Platform } from 'react-native';
 
-import type { MapCamera, MapViewProps } from '../../../types/maps.js';
+import type { MapCamera, MapViewProps, MapViewStyle } from '../../../types/maps.js';
 import { findMapMarker } from './findMapMarker.js';
 import { toExpoCameraPosition } from './toExpoCameraPosition.js';
+
+const DEFAULT_NATIVE_STYLE: MapViewStyle = { flex: 1 };
 
 /*** Render the portable map contract through Expo Maps on iOS and Android. */
 export function MapView(props: MapViewProps): ReactElement {
@@ -26,7 +28,7 @@ function renderAppleMap({ props, cameraProps }: NativeMapRenderProps): ReactElem
   return (
     <AppleMaps.View
       {...cameraProps}
-      style={style ?? { flex: 1 }}
+      style={style ?? DEFAULT_NATIVE_STYLE}
       markers={markers.map(({ id, coordinate, title }) => ({
         id,
         coordinates: coordinate,
@@ -49,7 +51,7 @@ function renderGoogleMap({ props, cameraProps }: NativeMapRenderProps): ReactEle
   return (
     <GoogleMaps.View
       {...cameraProps}
-      style={style ?? { flex: 1 }}
+      style={style ?? DEFAULT_NATIVE_STYLE}
       markers={markers.map(({ id, coordinate, title, description }) => ({
         id,
         coordinates: coordinate,
