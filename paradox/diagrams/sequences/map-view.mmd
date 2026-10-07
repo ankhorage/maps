@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant participant_MapView as MapView
+  participant participant_renderAppleMap as renderAppleMap
+  participant participant_renderGoogleMap as renderGoogleMap
+  participant participant_toExpoCameraPosition as toExpoCameraPosition
+  participant participant_toMapLibreViewState as toMapLibreViewState
+  participant_MapView->>participant_toExpoCameraPosition: toExpoCameraPosition()
+  participant_toExpoCameraPosition-->>participant_MapView: return
+  participant_MapView->>participant_renderAppleMap: renderAppleMap()
+  participant_renderAppleMap-->>participant_MapView: return
+  participant_MapView->>participant_renderGoogleMap: renderGoogleMap()
+  participant_renderGoogleMap-->>participant_MapView: return
+  participant_MapView->>participant_toMapLibreViewState: toMapLibreViewState()
+  participant_toMapLibreViewState-->>participant_MapView: return

@@ -7,9 +7,9 @@
     "see": [],
     "security": [],
     "kind": "function",
-    "modulePath": "src/defineMapsAdapter.ts",
+    "modulePath": "src/features/map-view/defineMapsAdapter.ts",
     "sourceLocation": {
-      "filePath": "src/defineMapsAdapter.ts",
+      "filePath": "src/features/map-view/defineMapsAdapter.ts",
       "line": 4,
       "column": 1
     },
@@ -160,6 +160,28 @@
     "structuredRows": []
   },
   {
+    "name": "MapDimension",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/types/maps.ts",
+    "sourceLocation": {
+      "filePath": "src/types/maps.ts",
+      "line": 28,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
     "name": "MapMarker",
     "title": null,
     "description": null,
@@ -255,7 +277,7 @@
     "modulePath": "src/types/maps.ts",
     "sourceLocation": {
       "filePath": "src/types/maps.ts",
-      "line": 39,
+      "line": 54,
       "column": 1
     },
     "exportPaths": [
@@ -295,7 +317,7 @@
     "modulePath": "src/types/maps.ts",
     "sourceLocation": {
       "filePath": "src/types/maps.ts",
-      "line": 35,
+      "line": 50,
       "column": 1
     },
     "exportPaths": [
@@ -303,6 +325,44 @@
     ],
     "relatedSymbols": [],
     "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "MapView",
+    "title": null,
+    "description": "Reject rendering when the host did not select a browser or React Native package condition.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "function",
+    "modulePath": "src/features/map-view/MapView.ts",
+    "sourceLocation": {
+      "filePath": "src/features/map-view/MapView.ts",
+      "line": 4,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "MapViewProps"
+    ],
+    "signatures": [
+      {
+        "label": "(_props: MapViewProps) => never",
+        "parameters": [
+          {
+            "name": "_props",
+            "type": "MapViewProps",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "never",
+        "returnDescription": null
+      }
+    ],
     "members": [],
     "structuredRows": []
   },
@@ -317,7 +377,7 @@
     "modulePath": "src/types/maps.ts",
     "sourceLocation": {
       "filePath": "src/types/maps.ts",
-      "line": 37,
+      "line": 52,
       "column": 1
     },
     "exportPaths": [
@@ -339,7 +399,7 @@
     "modulePath": "src/types/maps.ts",
     "sourceLocation": {
       "filePath": "src/types/maps.ts",
-      "line": 28,
+      "line": 41,
       "column": 1
     },
     "exportPaths": [
@@ -349,7 +409,9 @@
       "MapCamera",
       "MapCameraChangeEvent",
       "MapMarker",
-      "MapMarkerPressEvent"
+      "MapMarkerPressEvent",
+      "MapViewStyle",
+      "MapWebConfiguration"
     ],
     "signatures": [],
     "members": [
@@ -379,6 +441,103 @@
         "kind": "property",
         "type": "(event: MapMarkerPressEvent) => void",
         "required": false,
+        "description": null
+      },
+      {
+        "name": "style",
+        "kind": "property",
+        "type": "MapViewStyle",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "web",
+        "kind": "property",
+        "type": "MapWebConfiguration",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "MapViewStyle",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/maps.ts",
+    "sourceLocation": {
+      "filePath": "src/types/maps.ts",
+      "line": 30,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "MapDimension"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "flex",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "height",
+        "kind": "property",
+        "type": "MapDimension",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "width",
+        "kind": "property",
+        "type": "MapDimension",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "MapWebConfiguration",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/maps.ts",
+    "sourceLocation": {
+      "filePath": "src/types/maps.ts",
+      "line": 36,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "styleUrl",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "workerUrl",
+        "kind": "property",
+        "type": "string",
+        "required": true,
         "description": null
       }
     ],

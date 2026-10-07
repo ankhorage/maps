@@ -3,8 +3,8 @@
 ## defineMapsAdapter
 
 Kind: `function`
-Module: `src/defineMapsAdapter.ts`
-Source: `src/defineMapsAdapter.ts:4:1`
+Module: `src/features/map-view/defineMapsAdapter.ts`
+Source: `src/features/map-view/defineMapsAdapter.ts:4:1`
 
 Define one platform implementation against the canonical Maps adapter contract.
 
@@ -54,6 +54,12 @@ Source: `src/types/maps.ts:1:1`
 | latitude | property | `number` | yes |  |
 | longitude | property | `number` | yes |  |
 
+## MapDimension
+
+Kind: `unknown`
+Module: `src/types/maps.ts`
+Source: `src/types/maps.ts:28:1`
+
 ## MapMarker
 
 Kind: `type`
@@ -85,7 +91,7 @@ Source: `src/types/maps.ts:24:1`
 
 Kind: `type`
 Module: `src/types/maps.ts`
-Source: `src/types/maps.ts:39:1`
+Source: `src/types/maps.ts:54:1`
 
 ### Members
 
@@ -98,19 +104,33 @@ Source: `src/types/maps.ts:39:1`
 
 Kind: `unknown`
 Module: `src/types/maps.ts`
-Source: `src/types/maps.ts:35:1`
+Source: `src/types/maps.ts:50:1`
+
+## MapView
+
+Kind: `function`
+Module: `src/features/map-view/MapView.ts`
+Source: `src/features/map-view/MapView.ts:4:1`
+
+Reject rendering when the host did not select a browser or React Native package condition.
+
+### Signatures
+
+- `(_props: MapViewProps) => never`
+  - _props: `MapViewProps`
+  - returns: `never`
 
 ## MapViewComponent
 
 Kind: `unknown`
 Module: `src/types/maps.ts`
-Source: `src/types/maps.ts:37:1`
+Source: `src/types/maps.ts:52:1`
 
 ## MapViewProps
 
 Kind: `type`
 Module: `src/types/maps.ts`
-Source: `src/types/maps.ts:28:1`
+Source: `src/types/maps.ts:41:1`
 
 ### Members
 
@@ -120,3 +140,32 @@ Source: `src/types/maps.ts:28:1`
 | markers | property | `readonly MapMarker[]` | no |  |
 | onCameraChange | property | `(event: MapCameraChangeEvent) => void` | no |  |
 | onMarkerPress | property | `(event: MapMarkerPressEvent) => void` | no |  |
+| style | property | `MapViewStyle` | no |  |
+| web | property | `MapWebConfiguration` | no |  |
+
+## MapViewStyle
+
+Kind: `type`
+Module: `src/types/maps.ts`
+Source: `src/types/maps.ts:30:1`
+
+### Members
+
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| flex | property | `number` | no |  |
+| height | property | `MapDimension` | no |  |
+| width | property | `MapDimension` | no |  |
+
+## MapWebConfiguration
+
+Kind: `type`
+Module: `src/types/maps.ts`
+Source: `src/types/maps.ts:36:1`
+
+### Members
+
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| styleUrl | property | `string` | yes |  |
+| workerUrl | property | `string` | yes |  |

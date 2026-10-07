@@ -2,12 +2,46 @@ graph TD
   package__ankhorage_maps["@ankhorage/maps"]
   entrypoint_src_index_ts["src/index.ts"]
   package__ankhorage_maps --> entrypoint_src_index_ts
-  module_src_defineMapsAdapter_ts["src/defineMapsAdapter.ts"]
-  package__ankhorage_maps -.-> module_src_defineMapsAdapter_ts
-  module_src_defineMapsAdapter_ts --> module_src_types_maps_ts
+  module_src_features_map_view_adapters_findMapMarker_test_ts["src/features/map-view/adapters/findMapMarker.test.ts"]
+  package__ankhorage_maps -.-> module_src_features_map_view_adapters_findMapMarker_test_ts
+  module_src_features_map_view_adapters_findMapMarker_test_ts --> module_src_features_map_view_adapters_findMapMarker_ts
+  module_src_features_map_view_adapters_findMapMarker_ts["src/features/map-view/adapters/findMapMarker.ts"]
+  package__ankhorage_maps -.-> module_src_features_map_view_adapters_findMapMarker_ts
+  module_src_features_map_view_adapters_findMapMarker_ts --> module_src_types_maps_ts
+  module_src_features_map_view_adapters_MapView_native_tsx["src/features/map-view/adapters/MapView.native.tsx"]
+  package__ankhorage_maps -.-> module_src_features_map_view_adapters_MapView_native_tsx
+  module_src_features_map_view_adapters_MapView_native_tsx --> module_src_features_map_view_adapters_findMapMarker_ts
+  module_src_features_map_view_adapters_MapView_native_tsx --> module_src_features_map_view_adapters_toExpoCameraPosition_ts
+  module_src_features_map_view_adapters_MapView_native_tsx --> module_src_types_maps_ts
+  module_src_features_map_view_adapters_MapView_web_tsx["src/features/map-view/adapters/MapView.web.tsx"]
+  package__ankhorage_maps -.-> module_src_features_map_view_adapters_MapView_web_tsx
+  module_src_features_map_view_adapters_MapView_web_tsx --> module_src_features_map_view_adapters_toMapLibreViewState_ts
+  module_src_features_map_view_adapters_MapView_web_tsx --> module_src_types_maps_ts
+  module_src_features_map_view_adapters_toExpoCameraPosition_test_ts["src/features/map-view/adapters/toExpoCameraPosition.test.ts"]
+  package__ankhorage_maps -.-> module_src_features_map_view_adapters_toExpoCameraPosition_test_ts
+  module_src_features_map_view_adapters_toExpoCameraPosition_test_ts --> module_src_features_map_view_adapters_toExpoCameraPosition_ts
+  module_src_features_map_view_adapters_toExpoCameraPosition_ts["src/features/map-view/adapters/toExpoCameraPosition.ts"]
+  package__ankhorage_maps -.-> module_src_features_map_view_adapters_toExpoCameraPosition_ts
+  module_src_features_map_view_adapters_toExpoCameraPosition_ts --> module_src_types_maps_ts
+  module_src_features_map_view_adapters_toMapLibreViewState_test_ts["src/features/map-view/adapters/toMapLibreViewState.test.ts"]
+  package__ankhorage_maps -.-> module_src_features_map_view_adapters_toMapLibreViewState_test_ts
+  module_src_features_map_view_adapters_toMapLibreViewState_test_ts --> module_src_features_map_view_adapters_toMapLibreViewState_ts
+  module_src_features_map_view_adapters_toMapLibreViewState_ts["src/features/map-view/adapters/toMapLibreViewState.ts"]
+  package__ankhorage_maps -.-> module_src_features_map_view_adapters_toMapLibreViewState_ts
+  module_src_features_map_view_adapters_toMapLibreViewState_ts --> module_src_types_maps_ts
+  module_src_features_map_view_defineMapsAdapter_ts["src/features/map-view/defineMapsAdapter.ts"]
+  package__ankhorage_maps -.-> module_src_features_map_view_defineMapsAdapter_ts
+  module_src_features_map_view_defineMapsAdapter_ts --> module_src_types_maps_ts
+  module_src_features_map_view_MapView_ts["src/features/map-view/MapView.ts"]
+  package__ankhorage_maps -.-> module_src_features_map_view_MapView_ts
+  module_src_features_map_view_MapView_ts --> module_src_types_maps_ts
+  module_src_index_native_ts["src/index.native.ts"]
+  package__ankhorage_maps -.-> module_src_index_native_ts
   module_src_index_test_ts["src/index.test.ts"]
   package__ankhorage_maps -.-> module_src_index_test_ts
   module_src_index_test_ts --> module_src_index_ts
   module_src_index_ts["src/index.ts"]
+  module_src_index_web_ts["src/index.web.ts"]
+  package__ankhorage_maps -.-> module_src_index_web_ts
   module_src_types_maps_ts["src/types/maps.ts"]
   package__ankhorage_maps -.-> module_src_types_maps_ts

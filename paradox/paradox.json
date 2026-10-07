@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.1.0",
+      "value": "v0.2.0",
       "color": "cb3837"
     },
     {
@@ -73,13 +73,121 @@
   ],
   "modules": [
     {
-      "path": "src/defineMapsAdapter.ts",
+      "path": "src/features/map-view/adapters/findMapMarker.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/map-view/adapters/findMapMarker.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/map-view/adapters/findMapMarker.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/maps.ts"
+      ],
+      "exports": [
+        "findMapMarker"
+      ]
+    },
+    {
+      "path": "src/features/map-view/adapters/MapView.native.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/map-view/adapters/findMapMarker.ts",
+        "src/features/map-view/adapters/toExpoCameraPosition.ts",
+        "src/types/maps.ts"
+      ],
+      "exports": [
+        "MapView"
+      ]
+    },
+    {
+      "path": "src/features/map-view/adapters/MapView.web.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/map-view/adapters/toMapLibreViewState.ts",
+        "src/types/maps.ts"
+      ],
+      "exports": [
+        "MapView"
+      ]
+    },
+    {
+      "path": "src/features/map-view/adapters/toExpoCameraPosition.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/map-view/adapters/toExpoCameraPosition.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/map-view/adapters/toExpoCameraPosition.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/maps.ts"
+      ],
+      "exports": [
+        "toExpoCameraPosition"
+      ]
+    },
+    {
+      "path": "src/features/map-view/adapters/toMapLibreViewState.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/map-view/adapters/toMapLibreViewState.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/map-view/adapters/toMapLibreViewState.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/maps.ts"
+      ],
+      "exports": [
+        "toMapLibreViewState"
+      ]
+    },
+    {
+      "path": "src/features/map-view/defineMapsAdapter.ts",
       "isEntrypoint": false,
       "dependencies": [
         "src/types/maps.ts"
       ],
       "exports": [
         "defineMapsAdapter"
+      ]
+    },
+    {
+      "path": "src/features/map-view/MapView.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/maps.ts"
+      ],
+      "exports": [
+        "MapView"
+      ]
+    },
+    {
+      "path": "src/index.native.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "defineMapsAdapter",
+        "MapCamera",
+        "MapCameraChangeEvent",
+        "MapCoordinate",
+        "MapDimension",
+        "MapMarker",
+        "MapMarkerPressEvent",
+        "MapsAdapter",
+        "MapsPlatform",
+        "MapView",
+        "MapViewComponent",
+        "MapViewProps",
+        "MapViewStyle",
+        "MapWebConfiguration"
       ]
     },
     {
@@ -99,12 +207,37 @@
         "MapCamera",
         "MapCameraChangeEvent",
         "MapCoordinate",
+        "MapDimension",
         "MapMarker",
         "MapMarkerPressEvent",
         "MapsAdapter",
         "MapsPlatform",
+        "MapView",
         "MapViewComponent",
-        "MapViewProps"
+        "MapViewProps",
+        "MapViewStyle",
+        "MapWebConfiguration"
+      ]
+    },
+    {
+      "path": "src/index.web.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "defineMapsAdapter",
+        "MapCamera",
+        "MapCameraChangeEvent",
+        "MapCoordinate",
+        "MapDimension",
+        "MapMarker",
+        "MapMarkerPressEvent",
+        "MapsAdapter",
+        "MapsPlatform",
+        "MapView",
+        "MapViewComponent",
+        "MapViewProps",
+        "MapViewStyle",
+        "MapWebConfiguration"
       ]
     },
     {
@@ -115,12 +248,15 @@
         "MapCamera",
         "MapCameraChangeEvent",
         "MapCoordinate",
+        "MapDimension",
         "MapMarker",
         "MapMarkerPressEvent",
         "MapsAdapter",
         "MapsPlatform",
         "MapViewComponent",
-        "MapViewProps"
+        "MapViewProps",
+        "MapViewStyle",
+        "MapWebConfiguration"
       ]
     }
   ],
@@ -133,9 +269,9 @@
       "see": [],
       "security": [],
       "kind": "function",
-      "modulePath": "src/defineMapsAdapter.ts",
+      "modulePath": "src/features/map-view/defineMapsAdapter.ts",
       "sourceLocation": {
-        "filePath": "src/defineMapsAdapter.ts",
+        "filePath": "src/features/map-view/defineMapsAdapter.ts",
         "line": 4,
         "column": 1
       },
@@ -286,6 +422,28 @@
       "structuredRows": []
     },
     {
+      "name": "MapDimension",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 28,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
       "name": "MapMarker",
       "title": null,
       "description": null,
@@ -381,7 +539,7 @@
       "modulePath": "src/types/maps.ts",
       "sourceLocation": {
         "filePath": "src/types/maps.ts",
-        "line": 39,
+        "line": 54,
         "column": 1
       },
       "exportPaths": [
@@ -421,7 +579,7 @@
       "modulePath": "src/types/maps.ts",
       "sourceLocation": {
         "filePath": "src/types/maps.ts",
-        "line": 35,
+        "line": 50,
         "column": 1
       },
       "exportPaths": [
@@ -429,6 +587,44 @@
       ],
       "relatedSymbols": [],
       "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "MapView",
+      "title": null,
+      "description": "Reject rendering when the host did not select a browser or React Native package condition.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "function",
+      "modulePath": "src/features/map-view/MapView.ts",
+      "sourceLocation": {
+        "filePath": "src/features/map-view/MapView.ts",
+        "line": 4,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapViewProps"
+      ],
+      "signatures": [
+        {
+          "label": "(_props: MapViewProps) => never",
+          "parameters": [
+            {
+              "name": "_props",
+              "type": "MapViewProps",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "never",
+          "returnDescription": null
+        }
+      ],
       "members": [],
       "structuredRows": []
     },
@@ -443,7 +639,7 @@
       "modulePath": "src/types/maps.ts",
       "sourceLocation": {
         "filePath": "src/types/maps.ts",
-        "line": 37,
+        "line": 52,
         "column": 1
       },
       "exportPaths": [
@@ -465,7 +661,7 @@
       "modulePath": "src/types/maps.ts",
       "sourceLocation": {
         "filePath": "src/types/maps.ts",
-        "line": 28,
+        "line": 41,
         "column": 1
       },
       "exportPaths": [
@@ -475,7 +671,9 @@
         "MapCamera",
         "MapCameraChangeEvent",
         "MapMarker",
-        "MapMarkerPressEvent"
+        "MapMarkerPressEvent",
+        "MapViewStyle",
+        "MapWebConfiguration"
       ],
       "signatures": [],
       "members": [
@@ -506,6 +704,103 @@
           "type": "(event: MapMarkerPressEvent) => void",
           "required": false,
           "description": null
+        },
+        {
+          "name": "style",
+          "kind": "property",
+          "type": "MapViewStyle",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "web",
+          "kind": "property",
+          "type": "MapWebConfiguration",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "MapViewStyle",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 30,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapDimension"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "flex",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "height",
+          "kind": "property",
+          "type": "MapDimension",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "width",
+          "kind": "property",
+          "type": "MapDimension",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "MapWebConfiguration",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 36,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "styleUrl",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "workerUrl",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
         }
       ],
       "structuredRows": []
@@ -514,12 +809,122 @@
   "components": [],
   "sourceFunctions": [
     {
+      "name": "findMapMarker",
+      "description": "Resolve a portable marker by provider-emitted identifier.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/findMapMarker.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "MapView",
+      "description": "Render the portable map contract through Expo Maps on iOS and Android.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/MapView.native.tsx",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderAppleMap",
+      "description": "Render the Apple Maps implementation from portable map props.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/MapView.native.tsx",
+        "line": 26,
+        "column": 1
+      }
+    },
+    {
+      "name": "renderGoogleMap",
+      "description": "Render the Google Maps implementation from portable map props.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/MapView.native.tsx",
+        "line": 49,
+        "column": 1
+      }
+    },
+    {
+      "name": "fromExpoCamera",
+      "description": "Normalize an Expo Maps camera event into the portable map camera contract.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/MapView.native.tsx",
+        "line": 73,
+        "column": 1
+      }
+    },
+    {
+      "name": "MapView",
+      "description": "Render the portable map contract through MapLibre on the web.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/MapView.web.tsx",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "fromMapLibreCamera",
+      "description": "Normalize a MapLibre view state into the portable map camera contract.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/MapView.web.tsx",
+        "line": 54,
+        "column": 1
+      }
+    },
+    {
+      "name": "toExpoCameraPosition",
+      "description": "Map the portable camera into the subset supported by Expo Maps initial camera positioning.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/toExpoCameraPosition.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "toMapLibreViewState",
+      "description": "Map the portable camera into MapLibre's initial view-state shape.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/adapters/toMapLibreViewState.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
       "name": "defineMapsAdapter",
       "description": "Define one platform implementation against the canonical Maps adapter contract.",
       "see": [],
       "security": [],
       "sourceLocation": {
-        "filePath": "src/defineMapsAdapter.ts",
+        "filePath": "src/features/map-view/defineMapsAdapter.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "MapView",
+      "description": "Reject rendering when the host did not select a browser or React Native package condition.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/map-view/MapView.ts",
         "line": 4,
         "column": 1
       }
@@ -540,18 +945,36 @@
     {
       "kind": "export",
       "name": "defineMapsAdapter",
-      "sourcePath": "src/defineMapsAdapter.ts",
+      "sourcePath": "src/features/map-view/defineMapsAdapter.ts",
       "symbolName": "defineMapsAdapter",
       "description": "Define one platform implementation against the canonical Maps adapter contract.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "MapView",
+      "sourcePath": "src/features/map-view/MapView.ts",
+      "symbolName": "MapView",
+      "description": "Reject rendering when the host did not select a browser or React Native package condition.",
       "isReadme": false
     }
   ],
   "graphs": {
     "imports": [
       {
-        "fromPath": "src/defineMapsAdapter.ts",
+        "fromPath": "src/index.native.ts",
+        "toPath": "src/features/map-view/adapters/MapView.native.tsx",
+        "sourcePath": "src/index.native.ts"
+      },
+      {
+        "fromPath": "src/index.native.ts",
+        "toPath": "src/features/map-view/defineMapsAdapter.ts",
+        "sourcePath": "src/index.native.ts"
+      },
+      {
+        "fromPath": "src/index.native.ts",
         "toPath": "src/types/maps.ts",
-        "sourcePath": "src/defineMapsAdapter.ts"
+        "sourcePath": "src/index.native.ts"
       },
       {
         "fromPath": "src/index.test.ts",
@@ -560,13 +983,98 @@
       },
       {
         "fromPath": "src/index.ts",
-        "toPath": "src/defineMapsAdapter.ts",
+        "toPath": "src/features/map-view/defineMapsAdapter.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/map-view/MapView.ts",
         "sourcePath": "src/index.ts"
       },
       {
         "fromPath": "src/index.ts",
         "toPath": "src/types/maps.ts",
         "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.web.ts",
+        "toPath": "src/features/map-view/adapters/MapView.web.tsx",
+        "sourcePath": "src/index.web.ts"
+      },
+      {
+        "fromPath": "src/index.web.ts",
+        "toPath": "src/features/map-view/defineMapsAdapter.ts",
+        "sourcePath": "src/index.web.ts"
+      },
+      {
+        "fromPath": "src/index.web.ts",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/index.web.ts"
+      },
+      {
+        "fromPath": "src/features/map-view/defineMapsAdapter.ts",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/features/map-view/defineMapsAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/map-view/MapView.ts",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/features/map-view/MapView.ts"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/findMapMarker.test.ts",
+        "toPath": "src/features/map-view/adapters/findMapMarker.ts",
+        "sourcePath": "src/features/map-view/adapters/findMapMarker.test.ts"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/findMapMarker.ts",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/features/map-view/adapters/findMapMarker.ts"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/MapView.native.tsx",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/MapView.native.tsx",
+        "toPath": "src/features/map-view/adapters/findMapMarker.ts",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/MapView.native.tsx",
+        "toPath": "src/features/map-view/adapters/toExpoCameraPosition.ts",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/MapView.web.tsx",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/features/map-view/adapters/MapView.web.tsx"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/MapView.web.tsx",
+        "toPath": "src/features/map-view/adapters/toMapLibreViewState.ts",
+        "sourcePath": "src/features/map-view/adapters/MapView.web.tsx"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/toExpoCameraPosition.test.ts",
+        "toPath": "src/features/map-view/adapters/toExpoCameraPosition.ts",
+        "sourcePath": "src/features/map-view/adapters/toExpoCameraPosition.test.ts"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/toExpoCameraPosition.ts",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/features/map-view/adapters/toExpoCameraPosition.ts"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/toMapLibreViewState.test.ts",
+        "toPath": "src/features/map-view/adapters/toMapLibreViewState.ts",
+        "sourcePath": "src/features/map-view/adapters/toMapLibreViewState.test.ts"
+      },
+      {
+        "fromPath": "src/features/map-view/adapters/toMapLibreViewState.ts",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/features/map-view/adapters/toMapLibreViewState.ts"
       }
     ],
     "calls": [
@@ -599,18 +1107,161 @@
         "toSymbol": "MapView",
         "callExpression": "defineMapsAdapter(adapter).MapView",
         "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/findMapMarker.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/map-view/adapters/findMapMarker.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/findMapMarker.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/map-view/adapters/findMapMarker.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/findMapMarker.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/map-view/adapters/findMapMarker.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/findMapMarker.test.ts",
+        "toSymbol": "findMapMarker",
+        "callExpression": "findMapMarker",
+        "sourcePath": "src/features/map-view/adapters/findMapMarker.test.ts"
+      },
+      {
+        "fromSymbol": "MapView",
+        "toSymbol": "toExpoCameraPosition",
+        "callExpression": "toExpoCameraPosition",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromSymbol": "MapView",
+        "toSymbol": "renderAppleMap",
+        "callExpression": "renderAppleMap",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromSymbol": "MapView",
+        "toSymbol": "renderGoogleMap",
+        "callExpression": "renderGoogleMap",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/MapView.native.tsx",
+        "toSymbol": "onCameraChange",
+        "callExpression": "onCameraChange",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/MapView.native.tsx",
+        "toSymbol": "fromExpoCamera",
+        "callExpression": "fromExpoCamera",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/MapView.native.tsx",
+        "toSymbol": "findMapMarker",
+        "callExpression": "findMapMarker",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/MapView.native.tsx",
+        "toSymbol": "onMarkerPress",
+        "callExpression": "onMarkerPress",
+        "sourcePath": "src/features/map-view/adapters/MapView.native.tsx"
+      },
+      {
+        "fromSymbol": "MapView",
+        "toSymbol": "toMapLibreViewState",
+        "callExpression": "toMapLibreViewState",
+        "sourcePath": "src/features/map-view/adapters/MapView.web.tsx"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/MapView.web.tsx",
+        "toSymbol": "onCameraChange",
+        "callExpression": "onCameraChange",
+        "sourcePath": "src/features/map-view/adapters/MapView.web.tsx"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/MapView.web.tsx",
+        "toSymbol": "fromMapLibreCamera",
+        "callExpression": "fromMapLibreCamera",
+        "sourcePath": "src/features/map-view/adapters/MapView.web.tsx"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/MapView.web.tsx",
+        "toSymbol": "onMarkerPress",
+        "callExpression": "onMarkerPress",
+        "sourcePath": "src/features/map-view/adapters/MapView.web.tsx"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/toExpoCameraPosition.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/map-view/adapters/toExpoCameraPosition.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/toExpoCameraPosition.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/map-view/adapters/toExpoCameraPosition.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/toExpoCameraPosition.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/map-view/adapters/toExpoCameraPosition.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/toExpoCameraPosition.test.ts",
+        "toSymbol": "toExpoCameraPosition",
+        "callExpression": "toExpoCameraPosition",
+        "sourcePath": "src/features/map-view/adapters/toExpoCameraPosition.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/toMapLibreViewState.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/map-view/adapters/toMapLibreViewState.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/toMapLibreViewState.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/map-view/adapters/toMapLibreViewState.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/toMapLibreViewState.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/map-view/adapters/toMapLibreViewState.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/map-view/adapters/toMapLibreViewState.test.ts",
+        "toSymbol": "toMapLibreViewState",
+        "callExpression": "toMapLibreViewState",
+        "sourcePath": "src/features/map-view/adapters/toMapLibreViewState.test.ts"
       }
     ],
     "typeReferences": [
       {
         "fromSymbol": "defineMapsAdapter",
         "toType": "MapsAdapter",
-        "sourcePath": "src/defineMapsAdapter.ts"
+        "sourcePath": "src/features/map-view/defineMapsAdapter.ts"
       },
       {
         "fromSymbol": "defineMapsAdapter",
         "toType": "TElement",
-        "sourcePath": "src/defineMapsAdapter.ts"
+        "sourcePath": "src/features/map-view/defineMapsAdapter.ts"
+      },
+      {
+        "fromSymbol": "MapView",
+        "toType": "MapViewProps",
+        "sourcePath": "src/features/map-view/MapView.ts"
       },
       {
         "fromSymbol": "MapCamera",
@@ -665,6 +1316,21 @@
       {
         "fromSymbol": "MapViewProps",
         "toType": "MapMarkerPressEvent",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapViewProps",
+        "toType": "MapViewStyle",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapViewProps",
+        "toType": "MapWebConfiguration",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapViewStyle",
+        "toType": "MapDimension",
         "sourcePath": "src/types/maps.ts"
       }
     ],
