@@ -13,6 +13,29 @@
   "bugs": {
     "url": "https://github.com/ankhorage/maps/issues"
   },
+  "keywords": [
+    "ankhorage",
+    "maps",
+    "cross-platform",
+    "react-native",
+    "web",
+    "adapter"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -24,6 +47,7 @@
     "check-types": "bun x tsc --noEmit -p tsconfig.json",
     "typecheck": "bun run check-types",
     "test": "bun test",
+    "prepack": "bun run build",
     "lint": "ankhorage-eslint . --max-warnings=0",
     "lint:fix": "ankhorage-eslint . --fix --max-warnings=0",
     "format": "ankhorage-prettier --write .",
@@ -31,11 +55,15 @@
     "knip:check": "ankhorage-knip",
     "changeset": "ankhorage-changeset",
     "changeset:status": "ankhorage-changeset status --since=origin/main",
-    "version-packages": "ankhorage-changeset version"
+    "version-packages": "ankhorage-changeset version",
+    "docs": "paradox"
   },
   "packageManager": "bun@1.4.2",
   "devDependencies": {
     "@ankhorage/devtools": "^2.1.19",
-    "@types/bun": "^1.4.2"
+    "@types/bun": "^1.4.2",
+    "typescript": "~6.0.3",
+    "@ankhorage/paradox": "^0.2.28",
+    "@types/node": "^26.6.4"
   }
 }
