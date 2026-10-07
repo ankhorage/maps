@@ -34,6 +34,11 @@ jobs:
       - run: bun run test
       - name: Generate release documentation for validation
         run: bun run docs
+      - name: Print generated README for bootstrap handoff
+        run: |
+          echo '---MAPS_README_BEGIN---'
+          cat README.md
+          echo '---MAPS_README_END---'
       - name: Seed initial Changesets changelog for validation
         run: printf '# @ankhorage/maps\n' > CHANGELOG.md
       - name: Upload generated bootstrap documentation
