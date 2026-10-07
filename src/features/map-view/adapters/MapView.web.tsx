@@ -1,0 +1,70 @@
+import 'maplibre-gl/dist/maplibre-gl.css';
+
+import type { ReactElement } from 'react';
+import Map, { Marker } from 'react-map-gl/maplibre';
+
+import type { MapCamera, MapViewProps, MapViewStyle } from '../../../types/maps.js';
+import { toMapLibreViewState } from './toMapLibreViewState.js';
+
+const DEFAULT_WEB_STYLE: MapViewStyle = { width: '100%', height: '100%' };
+
+/*** Render the portable map contract through MapLibre on the web. */
+export function MapView({
+  initialCamera,
+  markers = [],
+  style,
+  web,
+  onCameraChange,
+  onMarkerPress,
+}: MapViewProps): ReactElement {
+  if (web === undefined) {
+    throw new Error('@ankhorage/maps web MapView requires web.styleUrl and web.workerUrl.');
+  }
+
+  const initialViewState = toMapLibreViewState(initialCamera);
+  const initialViewProps = initialViewState === undefined ? {} : { initialViewState };
+
+  return (
+    <Map
+      {...initialViewProps}
+      mapStyle={web.styleUrl}
+      workerUrl={web.workerUrl}
+      style={style ?? DEFAULT_WEB_STYLE}
+      onMove={(event) => {
+        onCameraChange?.({ camera: fromMapLibreCamera(event.viewState) });
+      }}
+    >
+      {markers.map((marker) => (
+        <Marker
+          key={marker.id}
+          longitude={marker.coordinate.longitude}
+          latitude={marker.coordinate.latitude}
+          anchor="bottom"
+          onClick={(event) => {
+            event.originalEvent.stopPropagation();
+            onMarkerPress?.({ marker });
+          }}
+        />
+      ))}
+    </Map>
+  );
+}
+
+/*** Normalize a MapLibre view state into the portable map camera contract. */
+function fromMapLibreCamera(viewState: {
+  readonly longitude: number;
+  readonly latitude: number;
+  readonly zoom: number;
+  readonly bearing: number;
+  readonly pitch: number;
+}): MapCamera {
+  return {
+    center: {
+      latitude: viewState.latitude,
+      longitude: viewState.longitude,
+    },
+    zoom: viewState.zoom,
+    bearing: viewState.bearing,
+    pitch: viewState.pitch,
+  };
+}
