@@ -1,6 +1,6 @@
 {
   "name": "@ankhorage/maps",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Cross-platform map primitives and adapters for Ankhorage.",
   "license": "MIT",
   "type": "module",

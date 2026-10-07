@@ -1,0 +1,36 @@
+graph LR
+  module_src_defineMapsAdapter_ts["src/defineMapsAdapter.ts"]
+  module_src_index_test_ts["src/index.test.ts"]
+  module_src_index_ts["src/index.ts"]
+  module_src_types_maps_ts["src/types/maps.ts"]
+  export_defineMapsAdapter["defineMapsAdapter"]
+  module_src_defineMapsAdapter_ts --> export_defineMapsAdapter
+  export_defineMapsAdapter -.-> export_MapsAdapter
+  export_MapCamera["MapCamera"]
+  module_src_types_maps_ts --> export_MapCamera
+  export_MapCamera -.-> export_MapCoordinate
+  export_MapCameraChangeEvent["MapCameraChangeEvent"]
+  module_src_types_maps_ts --> export_MapCameraChangeEvent
+  export_MapCameraChangeEvent -.-> export_MapCamera
+  export_MapCoordinate["MapCoordinate"]
+  module_src_types_maps_ts --> export_MapCoordinate
+  export_MapMarker["MapMarker"]
+  module_src_types_maps_ts --> export_MapMarker
+  export_MapMarker -.-> export_MapCoordinate
+  export_MapMarkerPressEvent["MapMarkerPressEvent"]
+  module_src_types_maps_ts --> export_MapMarkerPressEvent
+  export_MapMarkerPressEvent -.-> export_MapMarker
+  export_MapsAdapter["MapsAdapter"]
+  module_src_types_maps_ts --> export_MapsAdapter
+  export_MapsAdapter -.-> export_MapsPlatform
+  export_MapsAdapter -.-> export_MapViewComponent
+  export_MapsPlatform["MapsPlatform"]
+  module_src_types_maps_ts --> export_MapsPlatform
+  export_MapViewComponent["MapViewComponent"]
+  module_src_types_maps_ts --> export_MapViewComponent
+  export_MapViewProps["MapViewProps"]
+  module_src_types_maps_ts --> export_MapViewProps
+  export_MapViewProps -.-> export_MapCamera
+  export_MapViewProps -.-> export_MapCameraChangeEvent
+  export_MapViewProps -.-> export_MapMarker
+  export_MapViewProps -.-> export_MapMarkerPressEvent

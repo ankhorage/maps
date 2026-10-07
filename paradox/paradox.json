@@ -1,0 +1,673 @@
+{
+  "packageName": "@ankhorage/maps",
+  "packageId": "@ankhorage/maps",
+  "description": "Cross-platform map primitives and adapters for Ankhorage.",
+  "collaborators": null,
+  "donation": null,
+  "badges": [
+    {
+      "id": "license",
+      "label": "license",
+      "value": "MIT",
+      "color": "2563eb"
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "value": "v0.1.0",
+      "color": "cb3837"
+    },
+    {
+      "id": "runtime",
+      "label": "runtime",
+      "value": "bun",
+      "color": "f59e0b"
+    },
+    {
+      "id": "typescript",
+      "label": "typescript",
+      "value": "strict",
+      "color": "2563eb"
+    },
+    {
+      "id": "eslint",
+      "label": "eslint",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "prettier",
+      "label": "prettier",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "build",
+      "label": "build",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "tests",
+      "label": "tests",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "docs",
+      "label": "paradox",
+      "value": "canonical",
+      "color": "0a7f3f"
+    }
+  ],
+  "usage": {
+    "packageName": "@ankhorage/maps",
+    "command": "ankh maps --help"
+  },
+  "usageEntries": [],
+  "exampleCount": 0,
+  "findings": [],
+  "config": null,
+  "entrypoints": [
+    "src/index.ts"
+  ],
+  "modules": [
+    {
+      "path": "src/defineMapsAdapter.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/maps.ts"
+      ],
+      "exports": [
+        "defineMapsAdapter"
+      ]
+    },
+    {
+      "path": "src/index.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/index.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/index.ts",
+      "isEntrypoint": true,
+      "dependencies": [],
+      "exports": [
+        "defineMapsAdapter",
+        "MapCamera",
+        "MapCameraChangeEvent",
+        "MapCoordinate",
+        "MapMarker",
+        "MapMarkerPressEvent",
+        "MapsAdapter",
+        "MapsPlatform",
+        "MapViewComponent",
+        "MapViewProps"
+      ]
+    },
+    {
+      "path": "src/types/maps.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "MapCamera",
+        "MapCameraChangeEvent",
+        "MapCoordinate",
+        "MapMarker",
+        "MapMarkerPressEvent",
+        "MapsAdapter",
+        "MapsPlatform",
+        "MapViewComponent",
+        "MapViewProps"
+      ]
+    }
+  ],
+  "exports": [
+    {
+      "name": "defineMapsAdapter",
+      "title": null,
+      "description": "Define one platform implementation against the canonical Maps adapter contract.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "function",
+      "modulePath": "src/defineMapsAdapter.ts",
+      "sourceLocation": {
+        "filePath": "src/defineMapsAdapter.ts",
+        "line": 4,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapsAdapter"
+      ],
+      "signatures": [
+        {
+          "label": "(adapter: MapsAdapter<TElement>) => MapsAdapter<TElement>",
+          "parameters": [
+            {
+              "name": "adapter",
+              "type": "MapsAdapter<TElement>",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "MapsAdapter<TElement>",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "MapCamera",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 6,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapCoordinate"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "bearing",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "center",
+          "kind": "property",
+          "type": "MapCoordinate",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "pitch",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "zoom",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "MapCameraChangeEvent",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 20,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapCamera"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "camera",
+          "kind": "property",
+          "type": "MapCamera",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "MapCoordinate",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 1,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "latitude",
+          "kind": "property",
+          "type": "number",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "longitude",
+          "kind": "property",
+          "type": "number",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "MapMarker",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 13,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapCoordinate"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "coordinate",
+          "kind": "property",
+          "type": "MapCoordinate",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "description",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "id",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "title",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "MapMarkerPressEvent",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 24,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapMarker"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "marker",
+          "kind": "property",
+          "type": "MapMarker",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "MapsAdapter",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 39,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapsPlatform",
+        "MapViewComponent"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "MapView",
+          "kind": "property",
+          "type": "MapViewComponent<TElement>",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "platform",
+          "kind": "property",
+          "type": "MapsPlatform",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "MapsPlatform",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 35,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "MapViewComponent",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 37,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "MapViewProps",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/maps.ts",
+      "sourceLocation": {
+        "filePath": "src/types/maps.ts",
+        "line": 28,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "MapCamera",
+        "MapCameraChangeEvent",
+        "MapMarker",
+        "MapMarkerPressEvent"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "initialCamera",
+          "kind": "property",
+          "type": "MapCamera",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "markers",
+          "kind": "property",
+          "type": "readonly MapMarker[]",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "onCameraChange",
+          "kind": "property",
+          "type": "(event: MapCameraChangeEvent) => void",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "onMarkerPress",
+          "kind": "property",
+          "type": "(event: MapMarkerPressEvent) => void",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    }
+  ],
+  "components": [],
+  "sourceFunctions": [
+    {
+      "name": "defineMapsAdapter",
+      "description": "Define one platform implementation against the canonical Maps adapter contract.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/defineMapsAdapter.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "MapView",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/index.test.ts",
+        "line": 7,
+        "column": 11
+      }
+    }
+  ],
+  "sequenceScenarios": [
+    {
+      "kind": "export",
+      "name": "defineMapsAdapter",
+      "sourcePath": "src/defineMapsAdapter.ts",
+      "symbolName": "defineMapsAdapter",
+      "description": "Define one platform implementation against the canonical Maps adapter contract.",
+      "isReadme": false
+    }
+  ],
+  "graphs": {
+    "imports": [
+      {
+        "fromPath": "src/defineMapsAdapter.ts",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/defineMapsAdapter.ts"
+      },
+      {
+        "fromPath": "src/index.test.ts",
+        "toPath": "src/index.ts",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/defineMapsAdapter.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/types/maps.ts",
+        "sourcePath": "src/index.ts"
+      }
+    ],
+    "calls": [
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "defineMapsAdapter",
+        "callExpression": "defineMapsAdapter",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "MapView",
+        "callExpression": "defineMapsAdapter(adapter).MapView",
+        "sourcePath": "src/index.test.ts"
+      }
+    ],
+    "typeReferences": [
+      {
+        "fromSymbol": "defineMapsAdapter",
+        "toType": "MapsAdapter",
+        "sourcePath": "src/defineMapsAdapter.ts"
+      },
+      {
+        "fromSymbol": "defineMapsAdapter",
+        "toType": "TElement",
+        "sourcePath": "src/defineMapsAdapter.ts"
+      },
+      {
+        "fromSymbol": "MapCamera",
+        "toType": "MapCoordinate",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapCameraChangeEvent",
+        "toType": "MapCamera",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapMarker",
+        "toType": "MapCoordinate",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapMarkerPressEvent",
+        "toType": "MapMarker",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapsAdapter",
+        "toType": "MapsPlatform",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapsAdapter",
+        "toType": "MapViewComponent",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapsAdapter",
+        "toType": "TElement",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapViewProps",
+        "toType": "MapCamera",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapViewProps",
+        "toType": "MapCameraChangeEvent",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapViewProps",
+        "toType": "MapMarker",
+        "sourcePath": "src/types/maps.ts"
+      },
+      {
+        "fromSymbol": "MapViewProps",
+        "toType": "MapMarkerPressEvent",
+        "sourcePath": "src/types/maps.ts"
+      }
+    ],
+    "componentComposition": []
+  }
+}

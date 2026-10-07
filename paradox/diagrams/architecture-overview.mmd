@@ -1,0 +1,13 @@
+graph TD
+  package__ankhorage_maps["@ankhorage/maps"]
+  entrypoint_src_index_ts["src/index.ts"]
+  package__ankhorage_maps --> entrypoint_src_index_ts
+  module_src_defineMapsAdapter_ts["src/defineMapsAdapter.ts"]
+  package__ankhorage_maps -.-> module_src_defineMapsAdapter_ts
+  module_src_defineMapsAdapter_ts --> module_src_types_maps_ts
+  module_src_index_test_ts["src/index.test.ts"]
+  package__ankhorage_maps -.-> module_src_index_test_ts
+  module_src_index_test_ts --> module_src_index_ts
+  module_src_index_ts["src/index.ts"]
+  module_src_types_maps_ts["src/types/maps.ts"]
+  package__ankhorage_maps -.-> module_src_types_maps_ts
