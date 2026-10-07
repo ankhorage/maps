@@ -1,7 +1,7 @@
 'use client';
 
-export { defineMapsAdapter } from './features/map-view/defineMapsAdapter.js';
 export { MapView } from './features/map-view/adapters/MapView.web.js';
+export { defineMapsAdapter } from './features/map-view/defineMapsAdapter.js';
 export type {
   MapCamera,
   MapCameraChangeEvent,
