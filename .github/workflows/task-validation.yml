@@ -32,17 +32,28 @@ jobs:
       - run: bun run changeset:status
       - run: bun run format
       - run: bun run test
+      - name: Generate release documentation for validation
+        run: bun run docs
+      - name: Seed initial Changesets changelog for validation
+        run: printf '# @ankhorage/maps\n' > CHANGELOG.md
+      - name: Upload generated bootstrap documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: maps-bootstrap-docs
+          path: |
+            README.md
+            paradox/
       - name: Validate repository
         run: BUN_INSTALL_CACHE_DIR="${RUNNER_TEMP}/doctor-cache" bunx @ankhorage/doctor@0.12.16 validate .
 
-      - name: Commit synchronized artifacts
+      - name: Commit synchronized lockfile
         run: |
-          if git diff --quiet; then
-            echo "Working tree is already synchronized."
+          git add bun.lock
+          if git diff --cached --quiet; then
+            echo "Lockfile is already synchronized."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add --all
-          git commit -m "chore: synchronize maps package artifacts"
+          git commit -m "chore: synchronize maps package lockfile"
           git push
