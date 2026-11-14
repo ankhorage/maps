@@ -1,5 +1,11 @@
 # @ankhorage/maps
 
+## 0.2.1
+
+### Patch Changes
+
+- 930f410: Add canonical repository metadata for package discovery and documentation.
+
 ## 0.2.0
 
 ### Minor Changes
