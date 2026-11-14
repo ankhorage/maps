@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "kind": "library",
+  "title": "Ankhorage Maps",
+  "summary": "Provides cross-platform map primitives and explicit web and native adapter boundaries.",
+  "purpose": "Let applications render and configure maps through a typed package boundary instead of coupling their core UI to one mapping platform.",
+  "domain": "cross-platform mapping",
+  "responsibilities": [
+    "Define portable map view, marker, camera, coordinate, and styling types.",
+    "Expose a map view component and an explicit maps-adapter definition boundary.",
+    "Provide platform-specific package entrypoints for web and native map implementations."
+  ],
+  "boundaries": [
+    "Does not own application location policy or persistent map data.",
+    "Does not choose or configure an application mapping provider.",
+    "Does not own application navigation or domain geospatial analysis."
+  ],
+  "audience": [
+    "Application authors building web or React Native map experiences.",
+    "Adapter authors connecting platform mapping SDKs."
+  ],
+  "useCases": [
+    "Render map markers and camera state through the package map-view API.",
+    "Supply platform mapping behavior through an explicit maps adapter."
+  ],
+  "architecture": {
+    "role": "Cross-platform UI library with adapter boundaries for platform mapping implementations.",
+    "invariants": [
+      "Portable map types remain independent of a concrete mapping SDK.",
+      "Platform-specific behavior stays at explicit web and native entrypoints."
+    ]
+  },
+  "constraints": {
+    "platforms": [
+      "Web",
+      "React Native",
+      "Expo when the optional Expo map peer dependencies are installed"
+    ],
+    "limitations": [
+      "Available map capabilities depend on the selected platform adapter and its host SDK.",
+      "The package does not provide location permission or geocoding policy."
+    ]
+  }
+}
