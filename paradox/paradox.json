@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.2.1",
+      "value": "v0.2.2",
       "color": "cb3837"
     },
     {
@@ -50,8 +50,8 @@
     {
       "id": "tests",
       "label": "tests",
-      "value": "checked",
-      "color": "0a7f3f"
+      "value": "configured",
+      "color": "6f42c1"
     },
     {
       "id": "docs",
@@ -239,6 +239,12 @@
         "MapViewStyle",
         "MapWebConfiguration"
       ]
+    },
+    {
+      "path": "src/packageContract.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
     },
     {
       "path": "src/types/maps.ts",
@@ -1107,6 +1113,24 @@
         "toSymbol": "MapView",
         "callExpression": "defineMapsAdapter(adapter).MapView",
         "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/packageContract.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/packageContract.test.ts"
+      },
+      {
+        "fromSymbol": "src/packageContract.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/packageContract.test.ts"
+      },
+      {
+        "fromSymbol": "src/packageContract.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/packageContract.test.ts"
       },
       {
         "fromSymbol": "src/features/map-view/adapters/findMapMarker.test.ts",

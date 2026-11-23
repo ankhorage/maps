@@ -1,5 +1,11 @@
 # @ankhorage/maps
 
+## 0.2.2
+
+### Patch Changes
+
+- 270c184: Require the Expo Maps peer dependency for the React Native package entrypoint.
+
 ## 0.2.1
 
 ### Patch Changes
