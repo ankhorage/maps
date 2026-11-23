@@ -78,9 +78,6 @@
     "expo": {
       "optional": true
     },
-    "expo-maps": {
-      "optional": true
-    },
     "react-dom": {
       "optional": true
     },
